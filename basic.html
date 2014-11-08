@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<!--[if lte IE 8]><html lang="en" class="ie8"><!--<![endif]-->
+<html lang="en">
+<head>
+    <title>Basic usage - jQuery imageHandler</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="author" content="Ramy Al Reedy">
+    <meta name="description" content="A lightweight plugin that handles your images with a handful of features">
+    <meta name="keywords" content="html,css,javascript,jquery,image,images,handler,handling,imagehandler">
+
+    <!--PAGE STYLES (YOU WON'T NEED THIS)-->
+    <link rel="stylesheet" href="css/page-styles.css" />
+
+    <!--STYLES RELATED TO THIS EXAMPLE-->
+    <style>
+
+        .image-list {
+            margin-top: -4%;
+            margin-left: -4%;
+        }
+
+            .image-list a {
+                float: left;
+                width: 21%;
+                margin-top: 4%;
+                margin-left: 4%;
+                height: 200px;
+                -webkit-transition: all ease 0.4s;
+                -moz-transition: all ease 0.4s;
+                -o-transition: all ease 0.4s;
+                transition: all ease 0.4s;
+            }
+
+        .handler {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #777;
+        }
+
+            .image-list a img:hover {
+                filter: alpha(opacity=80);
+            }
+
+            .image-list a:hover {
+                opacity: 0.8;
+            }
+
+        @media screen and (max-width: 767px) {
+            .image-list a {
+                width: 46%;
+                height: 260px;
+                margin-left: 4%;
+            }
+        }
+
+        @media screen and (max-width: 479px) {
+            .image-list,
+            .image-list a {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+
+    </style>
+
+    <!--[if lte IE 7]>
+    <style type="text/css">
+
+        .clearfix {
+            display: inline-block;
+        }
+
+        .image-list {
+            margin-top: -40px;
+            margin-left: -40px;
+        }
+
+        .handler {
+            position: relative;
+            z-index: -1;
+        }
+
+    </style>
+    <![endif]-->
+
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery.imageHandler.min.js"></script>
+
+    <!--CUSTOM SCRIPTS (YOU WON'T NEED THIS)-->
+    <script src="js/custom-scripts.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            //INITIALIZING IMAGEHANDLER WITH THE DEFAULTS & SPECIFING A PATH TO A LOADING GIF
+            $('.handler').imageHandler({
+                loader: 'images/loading.gif'
+            });
+
+            //IE7 HOVER FIX
+            $('.image-list a').hover( function () {
+                $(this).find('img').css('filter', 'alpha(opacity=80)');
+            },
+            function () {
+                $(this).find('img').css('filter', '');
+            });
+
+        });
+
+    </script>
+
+</head>
+<body>
+    <div class="menu-wrapper">
+        <span></span>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="index.html">Overview & documentation</a>
+                </li>
+                <li class="active">
+                    <a href="basic.html">Basic usage</a>
+                </li>
+                <li>
+                    <a href="lazy-loading.html">Lazy loading</a>
+                </li>
+                <li>
+                    <a href="retina.html">Retina</a>
+                </li>
+                <li>
+                    <a href="multiple.html">Multiple instances</a>
+                </li>
+                <li>
+                    <a href="rtl.html">RTL</a>
+                </li>
+                <li>
+                    <a href="rehandle.html">reHandle</a>
+                </li>
+                <li>
+                    <a href="ajax.html">Ajax</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <h1>
+        <a href="index.html">
+            jQuery imageHandler
+        </a>
+    </h1>
+    <h2>
+        Basic usage example
+    </h2>
+    <div class="image-list clearfix">
+        <a href="#">
+            <img class="handler" data-src="images/items/01.jpg" />
+        </a>
+        <a href="#">
+            <img class="handler" data-src="images/items/02.jpg" />
+        </a>
+        <a href="#">
+            <img class="handler" data-src="images/items/03.jpg" />
+        </a>
+        <a href="#">
+            <img class="handler" data-src="images/items/04.jpg" />
+        </a>
+        <a href="#">
+            <img class="handler" data-src="images/items/05.jpg" />
+        </a>
+        <a href="#">
+            <img class="handler" data-src="images/items/06.jpg" />
+        </a>
+        <a href="#">
+            <img class="handler" data-src="images/items/07.jpg" />
+        </a>
+        <a href="#">
+            <img class="handler" data-src="images/items/08.jpg" />
+        </a>
+        <a href="#">
+            <img class="handler" data-src="images/items/09.jpg" />
+        </a>
+        <a href="#">
+            <img class="handler" data-src="images/items/10.jpg" />
+        </a>
+        <a href="#">
+            <img class="handler" data-src="images/items/11.jpg" />
+        </a>
+        <a href="#">
+            <img class="handler" data-src="images/items/12.jpg" />
+        </a>
+    </div>
+</body>
+</html>

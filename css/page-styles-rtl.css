@@ -1,0 +1,30 @@
+body {
+    direction: rtl;
+}
+
+.menu-wrapper {
+    float: left;
+}
+
+.ie8 .menu-wrapper {
+    direction: ltr;
+    *margin-left: -2px;
+    *margin-right: 0;
+}
+
+.menu {
+    left: 0;
+    right: auto;
+}
+
+    .menu ul li:first-child:before, .menu ul li:first-child .before {
+        left: 8px;
+        right: auto;
+    }
+
+@media screen and (max-width: 1024px) {
+    h1 {
+        padding-right: 0;
+        padding-left: 60px;
+    }
+}

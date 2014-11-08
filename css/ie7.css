@@ -1,0 +1,44 @@
+html {
+    visibility: visible;
+}
+.clearfix {
+    display: inline-block;
+}
+p.tagline {
+    margin-top: 30px;
+}
+.menu-wrapper span {
+    height: 36px;
+}
+.menu ul li:first-child {
+    height: 36px;
+}
+    .menu ul li:first-child a {
+        height: 21px;
+        line-height: 20px;
+    }
+    .menu ul li:first-child .before {
+        top: -31px;
+        border-bottom-color: #202020;
+    }
+    .menu ul li:first-child:hover .before {
+        border-bottom-color: #101010;
+    }
+.image-list {
+    margin-left: -40px;
+}
+    .image-list li {
+        width: 214px;
+        margin-top: 40px;
+        margin-left: 40px;
+    }
+.handler {
+    position: relative;
+    z-index: -1;
+}
+.how-it-works p {
+    width: 120px;
+}
+.fill, .fit {
+    width: 488px;
+}

@@ -1,79 +1,810 @@
 <!DOCTYPE html>
-<html>
+<!--[if lte IE 8]><html lang="en" class="ie8"><!--<![endif]-->
+<html lang="en">
+<head>
+    <title>jQuery imageHandler</title>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Jquery-imagehandler : A jQuery plugin that handles the positioning and sizing of images" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="author" content="Ramy Al Reedy">
+    <meta name="description" content="A lightweight plugin that handles your images with a handful of features">
+    <meta name="keywords" content="html,css,javascript,jquery,image,images,handler,handling,imagehandler">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="css/styles.css" />
 
-    <title>Jquery-imagehandler</title>
-  </head>
+    <!--[if lte IE 7]>
+        <link rel="stylesheet" href="css/ie7.css" />
+    <![endif]-->
 
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/RamyAlReedy/jQuery-imageHandler">View on GitHub</a>
-
-          <h1 id="project_title">Jquery-imagehandler</h1>
-          <h2 id="project_tagline">A jQuery plugin that handles the positioning and sizing of images</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/RamyAlReedy/jQuery-imageHandler/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/RamyAlReedy/jQuery-imageHandler/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Jquery-imagehandler maintained by <a href="https://github.com/RamyAlReedy">RamyAlReedy</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery.imageHandler.min.js"></script>
     
+    <script src="js/custom-scripts.js"></script>
 
-  </body>
+    <script type="text/javascript">      
+        
+        $(document).ready(function () {
+
+            $('.handler').imageHandler({
+                mode: 'fill-top',
+                loader: 'images/loading.gif',
+                retina: true
+            });
+
+        });
+
+    </script>
+    
+</head>
+<body>
+    <div class="header clearfix">
+        <h1>
+            jQuery imageHandler
+        </h1>
+        <ul class="top-menu">
+            <li class="top-menu-item">
+                <div class="menu-wrapper">
+                    <span>Examples</span>
+                    <div class="menu">
+                        <ul>
+                            <li>
+                                <a href="basic.html">Basic usage</a>
+                            </li>
+                            <li>
+                                <a href="lazy-loading.html">Lazy loading</a>
+                            </li>
+                            <li>
+                                <a href="retina.html">Retina</a>
+                            </li>
+                            <li>
+                                <a href="multiple.html">Multiple instances</a>
+                            </li>
+                            <li>
+                                <a href="rtl.html">RTL</a>
+                            </li>
+                            <li>
+                                <a href="rehandle.html">reHandle</a>
+                            </li>
+                            <li>
+                                <a href="ajax.html">Ajax</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="top-menu-item">
+                <a href="https://github.com/RamyAlReedy/jQuery-imageHandler" class="github">GitHub</a>
+            </li>
+            <li class="top-menu-item">
+                <a href="#" class="download">Download v1.0</a>
+            </li>
+        </ul>
+    </div>
+    <p class="tagline">
+        A lightweight plugin that handles your images with a handful of features
+    </p>
+    <ul class="image-list clearfix">
+        <li>
+            <img class="handler" data-src="images/front.jpg" data-mode="fill-top" />
+            <h5>
+                fill-top
+            </h5>
+        </li>
+        <li>
+            <img class="handler" data-src="images/front.jpg" data-mode="fill-middle" />
+            <h5>
+                fill-middle
+            </h5>
+        </li>
+        <li>
+            <img class="handler" data-src="images/front.jpg" data-mode="fill-bottom" />
+            <h5>
+                fill-bottom
+            </h5>
+        </li>
+        <li>
+            <img class="handler" data-src="images/front.jpg" data-mode="fit" />
+            <h5>
+                fit
+            </h5>
+        </li>
+    </ul>
+    <h2>
+        Overview
+    </h2>
+    <p> 
+        When you're dealing with dynamic images, positioning and sizing them in your layouts can be a pain sometimes. You can't always 
+        control their dimensions and they might not even have a fixed orientation. They come as they come, yet you need them to have certain 
+        dimensions so they can play along nicely with your layouts.
+    </p>
+    <p>
+        When you're approaching a case like this, you'd either apply some server-side code to crop your images, or you'd go with the 
+        front-end approach instead. CSS3 magically solves this issue using the background-size property values 'cover' & 'contain', but 
+        this property will obviously work on background-images of elements, not img tags, and it won't work in browsers that don't support 
+        CSS3.
+    </p>
+    <p>
+        To support non-CSS3 browsers, we can do so by wrapping each image with a container div, then giving that container the dimensions 
+        we're after and hiding its overflow, right? Sounds great, but what if the image is shorter than the container? Should the image 
+        take the width or the height of the container? Do we center it horizontally or vertically? Or both?
+    </p>
+    <p>
+        This plugin handles all this crap for you. All you have to do is decide how you want your images to be displayed and the rest will 
+        be taken care of. It will check if the browser used supports CSS3, and if it does, it will go with 'background-image' approach 
+        because it's just smoother, and if it doesn't, then it will fallback to the other approach by applying styles to the images and their 
+        containers that result in the handling mode you chose. Additionally, window resize is detected to reHandle images if necessary.
+    </p>
+    <h2>
+        Features
+    </h2>
+    <ul class="list">
+        <li>
+            4 handling modes: <i>fill-top, fill-middle, fill-bottom & fit.</i>
+        </li>
+        <li>
+            Easy setup & integration
+        </li>
+        <li>
+            Lazy loading
+        </li>
+        <li>
+            Retina support
+        </li>
+        <li>
+            Multiple instances
+        </li>
+        <li>
+            Responsive
+        </li>
+        <li>
+            RTL support (Necessary for non-CSS3 browsers)
+        </li>
+        <li>
+            Can handle ajaxed images
+        </li>
+        <li>
+            Callback functions
+        </li>
+        <li>
+            Compatible with all major browsers: <i>IE7+, Chrome, Firefox, Safari & Opera.</i>
+        </li>
+        <li>
+            It's free. <i>This plugin is licensed under the MIT license, so you can use and abuse it however you want.</i>
+        </li>
+    </ul>
+    <h3>
+        Handling modes
+    </h3>
+    <p>
+        Deciding which mode to use depends on the content of the images and the nature of the project.
+        For example, if you're displaying images of people, it's best to use the 'fill-top' mode to make sure their faces are always 
+        visible. If the important information in the image is at its middle area (e.g., landscapes), use the 'fill-middle' mode. But if it's important 
+        that the whole image is visible, and you don't mind having white space around it, use the 'fit' mode.
+    </p>
+    <h3>
+        Easy setup & integration
+    </h3>
+    <p>
+        imageHandler will integrate smoothly with your projects because it doesn't come with any luggage. No stylesheets or themes, 
+        just the JS file. You have complete control over your styles. All the necessary styles are rendered inline with the images 
+        and their containers and they won't interfere with your styles in any way.
+    </p>
+    <p>
+        There are only 2 rules:
+    </p>
+    <ul class="list numbered">
+        <li>
+            You'll need to give a class to your images and have dimensions attached to it in your CSS, and initialize the plugin with 
+            this class.
+        </li>
+        <li>
+            Don't select the images with an 'img' selector. For example, don't use 'img.handler', or '.list
+            <span class="space"></span>img', because this won't be the case after page load. The plugin will remove the class from each 
+            image and it will give it to a container div it creates around each. So, just select the class on its own without specifying 
+            the tag name (e.g., '.handler', or '.list<span class="space"></span>.handler').
+        </li>
+    </ul>
+    <p>
+        You can use the styles in the examples as a starting point if you want.
+    </p>
+    <h3>
+        Lazy loading
+    </h3>
+    <p>
+        imageHandler has a lazy loading feature. If you set it to true, the images you selected to be handled won't load until 
+        the user scrolls to them. You'll need to provide the path to the images using the "data-src" attribute instead of the "src" 
+        attribute.
+        <br />
+        <i class="note">Please note that if you use both attributes, lazy loading won't work</i>
+        <span class="view-example">
+            <a href="lazy-loading.html">View example</a>
+        </span>
+    </p>
+    <h3>
+        Retina support
+    </h3>
+    <p>
+        Another feature you can take advantage of is retina support. If you set it to true, imageHandler will check the device used, 
+        and if it's a retina or a high density display, it will add an '@2x' suffix to the file name (e.g., 'image@2x.jpg'), assuming 
+        this is the name of the alternative high-res versions of your images. You can override the default '@2x' suffix using the 
+        [retina_suffix] option.
+        <span class="view-example">
+            <a href="retina.html">View example</a>
+        </span>
+    </p>
+    <h3>
+        Multiple instances
+    </h3>
+    <p>
+        You can setup multiple instances of the plugin on the same page if you want to have different options for different sets of 
+        images.
+        <span class="view-example">
+            <a href="multiple.html">View example</a>
+        </span>
+    </p>
+    <h3>
+        Responsive
+    </h3>
+    <p>
+        If you're using the lazy loading feature and the window gets resized, imageHandler will update itself with the position of the 
+        images that haven't been loaded yet. Also, if the browser used doesn't support CSS3, window resize is detected, and if dimensions 
+        of containers change, images will be reHandled.
+        <span class="view-example">
+            Take a look at any of the examples to check this out.
+        </span>
+    </p>
+    <h3>
+        RTL support
+    </h3>
+    <p>
+        If the direction of your document is right-to-left, set [rtl] to true so that imageHandler makes its calculations accordingly. This is 
+        only necessary for non-CSS3 browsers.
+        <span class="view-example">
+            <a href="rtl.html">View example</a>
+        </span>
+    </p>
+    <h3>
+        Can handle ajaxed images
+    </h3>
+    <span class="view-example">
+        <a href="ajax.html">View example</a>
+    </span>
+    <h2>
+        How it works
+    </h2>
+    <p>
+        If you use any of the three 'fill' modes, imageHandler will fill whatever it can from the image inside the container. 
+        If the image is shorter than the container, then it will take the height of the container and get centered horizontally. 
+        But if it's taller than the container, then that's when the '-top', '-middle' or '-bottom' come into play. The image 
+        will take the width of the container, and its vertical alignment will be according to the mode you chose. On the other hand, 
+        the 'fit' mode fits the whole image inside the container.
+    </p>
+
+    <div class="how-it-works clearfix">
+        <div class="fill">
+            <h6>Fill Modes</h6>
+            <div class="p-wrapper clearfix">
+                <p>If image is shorter than container</p>
+                <p>If image is taller than container</p>
+            </div>
+            <img src="images/fill-modes.png" />
+        </div>
+        <div class="fit">
+            <h6>Fit Mode</h6>
+            <div class="p-wrapper clearfix">
+                <p>If image is shorter than container</p>
+                <p>If image is taller than container</p>
+            </div>
+            <img src="images/fit-mode.png" />
+        </div>
+    </div>
+
+    <p>
+        Give the images you want to handle a class that holds the dimensions you're after and initialize the plugin with that class. 
+        imageHandler will render a container div around each image, then it will remove the class from the images and give it to the 
+        containers. After that, it will wait for the images to load then apply all the necessary styles that result in the mode 
+        you chose.
+    </p>
+    <p>
+        Any further manipulation in dimensions you wish to do on your images after page load, whether using CSS media queries or 
+        javascript, should be done on the container divs that took the class you initially gave to the images. In other words, 
+        you worry about the containers, and let the plugin worry about the images.
+    </p>
+
+    <h3 class="no-bold">
+        Basic usage example:
+    </h3>
+    <h4>
+        CSS:
+    </h4>
+    <div class="clearfix">
+        <span class="code-wrapper">
+            <span class="code">.handler {</span>
+                <span class="code-inner">
+                    <span class="code">width: 200px;</span>
+                    <br />
+                    <span class="code">height: 200px;</span>
+                    <br />
+                    <span class="code">padding: 0;</span>
+                    <br />
+                    <span class="code">border: 1px solid #000;</span>
+                </span>
+            <span class="code">}</span>
+        </span>
+    </div>
+    <h4>
+        HTML:
+    </h4>
+    <div class="clearfix">
+        <span class="code-wrapper">
+            <span class="code"><img class="handler" data-src="image.jpg" /></span>
+        </span>
+    </div>
+    <h4>
+        SCRIPT:
+    </h4>
+    <div class="clearfix">
+        <span class="code-wrapper">
+            <span class="code">$(document).ready(function() {</span>
+                <span class="code-inner">
+                    <span class="code">$('.handler').imageHandler();</span>
+                </span>
+            <span class="code">});</span>
+        </span>
+    </div>
+    <h4>
+        RESULT:
+    </h4>
+    <div class="clearfix">
+        <span class="code-wrapper">
+            <span class="code div-opening">&lt;div class="handler" style="background-image: url('image.jpg');"&gt;</span>
+            <span class="code-inner">
+                <span class="code">&lt;img style="display: none;"&gt;</span>
+            </span>
+            <span class="code div-closing">&lt;/div&gt;</span>
+        </span>
+    </div>
+
+    <h4></h4>
+    <p>
+        It's best to always provide the path to the image using the "data-src" attribute <strong>instead</strong> of the "src" attribute, 
+        and you <strong>must</strong> do so if you want to take advantage of lazy loading and retina support.
+    </p>
+
+    <h3>
+        Modes
+    </h3>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>
+                    Mode
+                </th>
+                <th>
+                    Description
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    fill-top (Default mode)
+                </td>
+                <td>
+                    Image fills container and, if taller, gets displayed from the top
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    fill-middle
+                </td>
+                <td>
+                    Image fills container and, if taller, gets focused on its middle area
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    fill-bottom
+                </td>
+                <td>
+                    Image fills container and, if taller, gets displayed from the bottom
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    fit
+                </td>
+                <td>
+                    Image fits inside container so that the whole image is visible
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        You can also override the handling mode exclusively on any image using the "data-mode" attribute.
+    </p>
+    <p>
+        So, let's say you initialize the plugin with the 'fill-top' mode like this:
+    </p>
+
+    <div class="clearfix">
+        <span class="code-wrapper">
+            <span class="code">$('.handler').imageHandler({</span>
+                <span class="code-inner">
+                    <span class="code">mode: 'fill-top'</span>
+                </span>
+            <span class="code">});</span>
+        </span>
+    </div>
+
+    <p>
+        And you add 3 images:
+    </p>
+
+    <div class="clearfix">
+        <span class="code-wrapper">
+            <span class="code"><img class="handler" data-src="image01.jpg" /></span>
+            <br />
+            <span class="code"><img class="handler" data-src="image02.jpg" /></span>
+            <br />
+            <span class="code"><img class="handler" data-src="image03.jpg" data-mode="fit" /></span>
+        </span>
+    </div>
+
+    <p>
+        The result is the first and second images being handled based on the 'fill-top' mode, while the third image being handled 
+        based on the 'fit' mode.
+    </p>
+
+    <h3>
+        While images are loading
+    </h3>
+
+    <p>
+        The plugin waits for each image to load before making necessary calculations. During this, the image is hidden and a 
+        loading gif is displayed on each (if you provided a path to one in the [loader] option). After the plugin finishes working, 
+        the loading gif disappears and the image fades in. You can set the fade duration (in milli seconds) using the [fade] option. 
+        Default is 1000.  If you don't want a fade effect, set it to 0.
+    </p>
+
+    <p>
+        Example usage of the [loader] option:
+    </p>
+
+    <div class="clearfix">
+        <span class="code-wrapper">
+            <span class="code">$('.handler').imageHandler({</span>
+                <span class="code-inner">
+                    <span class="code">loader: '/images/loading.gif'</span>
+                </span>
+            <span class="code">});</span>
+        </span>
+    </div>
+
+    <h3>
+        Options
+    </h3>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>
+                    Option
+                </th>
+                <th>
+                    Default
+                </th>
+                <th>
+                    Description
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    mode
+                </td>
+                <td>
+                    'fill-top'
+                </td>
+                <td>
+                    Handling mode used on images. Can be set to 'fill-top', fill-middle', 'fill-bottom', or 'fit'. You can override this 
+                    option using the "data-mode" attribute on any image.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    loader
+                </td>
+                <td>
+                    null
+                </td>
+                <td>
+                    Path to a loading gif to be displayed while images are loading.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    dummy
+                </td>
+                <td>
+                    null
+                </td>
+                <td>
+                    Path to a dummy image to be displayed if an image is not found. If this is left null, a normal broken image will appear.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    fade
+                </td>
+                <td>
+                    1000
+                </td>
+                <td>
+                    Duration (milli seconds) of fade-in effect after an image loads. Set it to 0 if you don't want a fade effect.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    lazy
+                </td>
+                <td>
+                    false
+                </td>
+                <td>
+                    When true, images won't be loaded on page load. Instead, imageHandler will load them when they come into view. 
+                    <br />
+                    <i class="note">Note: You <strong>must</strong> specify the path to the image using the "data-src" attribute 
+                    <strong>instead</strong> of the "src" attribute. If you use both attributes, lazy loading won't work.</i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    distance
+                </td>
+                <td>
+                    200
+                </td>
+                <td>
+                    If [lazy] is set to true, this is the distance (pixels) to start loading images before they come into view.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    retina
+                </td>
+                <td>
+                    false
+                </td>
+                <td>
+                    When true, imageHandler checks the device used, and if it's a retina or a high density display, it will look 
+                    for the alternative high-res version of the image based on the default '@2x' suffix, or the suffix you set using the 
+                    [retina_suffix] option. You can override the path to a retina image using the "data-retina" 
+                    attribute on any image.
+                    <br />
+                    <i class="note">Note: If the alternative version isn't found, the original version will be displayed instead.</i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    retina_suffix
+                </td>
+                <td>
+                    '@2x'
+                </td>
+                <td>
+                    If [retina] is set to true, this is the suffix that imageHandler adds to look for the alternate high-res 
+                    versions of your images (e.g., 'image@2x.jpg').
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    rtl
+                </td>
+                <td>
+                    false
+                </td>
+                <td>
+                    Set this to true if the direction of the document is right-to-left.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        Full setup example:
+    </p>
+
+    <div class="clearfix">
+        <span class="code-wrapper">
+            <span class="code">$('.handler').imageHandler({</span>
+                <span class="code-inner">
+                    <span class="code">mode: 'fill-top',</span>
+                    <br />
+                    <span class="code">loader: '/images/loading.gif',</span>
+                    <br />
+                    <span class="code">dummy: '/images/dummy.png',</span>
+                    <br />
+                    <span class="code">fade: 600,</span>
+                    <br />
+                    <span class="code">lazy: true,</span>
+                    <br />
+                    <span class="code">distance: 200,</span>
+                    <br />
+                    <span class="code">retina: true</span>
+                </span>
+            <span class="code">});</span>
+        </span>
+    </div>
+
+    <h3>
+        Callback functions
+    </h3>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>
+                    Function
+                </th>
+                <th>
+                    Parameters
+                </th>
+                <th>
+                    Description
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    before
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    runs before images start loading
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    afterEach
+                </td>
+                <td>
+                    itemLoaded
+                </td>
+                <td>
+                    runs after each image is done loading
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    onError
+                </td>
+                <td>
+                    itemError
+                </td>
+                <td>
+                    runs when an image is not found
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    afterAll
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    runs after all images are done loading
+                    <br />
+                    <i class="note">
+                        Note: If lazy loading is activated, this function will run after all images are scrolled to, loaded and handled.
+                    </i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        Usage example:
+    </p>
+
+    <div class="clearfix">
+        <span class="code-wrapper">
+            <span class="code">$('.handler').imageHandler({</span>
+                <span class="code-inner">
+                    <span class="code">mode: 'fill-top',</span>
+                    <br />
+                    <span class="code">before: function () {</span>
+                        <span class="code-inner">
+                            <span class="code comment">//do stuff</span>
+                        </span>
+                    <span class="code">},</span>
+                    <br />
+                    <span class="code">afterEach: function (itemLoaded) {</span>
+                        <span class="code-inner">
+                            <span class="code">itemLoaded.addClass('someclass');</span>
+                            <br />
+                            <span class="code comment">//do some other stuff</span>
+                        </span>
+                    <span class="code">},</span>
+                    <br />
+                    <span class="code">onError: function (itemError) {</span>
+                        <span class="code-inner">
+                            <span class="code">itemError.addClass('someclass');</span>
+                            <br />
+                            <span class="code comment">//do some other stuff</span>
+                        </span>
+                    <span class="code">},</span>
+                    <br />
+                    <span class="code">afterAll: function () {</span>
+                        <span class="code-inner">
+                            <span class="code comment">//do stuff</span>
+                        </span>
+                    <span class="code">}</span>
+                </span>
+            <span class="code">});</span>
+        </span>
+    </div>
+
+    <h3>
+        reHandle function
+    </h3>
+
+    Trigger a reHandle function on any event if positions or dimensions of images change. <a href="rehandle.html">View example</a>.
+
+    <h3 class="no-bold">
+        Usage example:
+    </h3>
+
+    <div class="clearfix">
+        <span class="code-wrapper">
+            <span class="code">var handler = $('.handler').imageHandler();</span><br />
+            <br />
+            <span class="code">$('.rehandle').click(function () {</span>
+                <span class="code-inner">
+                    <span class="code comment">//do stuff</span>
+                    <br />
+                    <span class="code">handler.trigger('reHandle');</span>
+                </span>
+            <span class="code">});</span>
+        </span>
+    </div>
+
+    <h2 class="important">
+        Important notes
+    </h2>
+
+    <h3>
+        Don't select images using 'img' selectors
+    </h3>
+    <p>
+        For the images you select to be handled by this plugin, don't select them using 'img', or even 'img.class'. This may be the case 
+        in your source code, but it won't be after page load. imageHandler will render a container div around each image, then it will 
+        remove the classes from the images and give them to the containers. Instead, just select the class without specifying the 
+        tag name (e.g., '.class').
+    </p>
+
+    <h3>
+        Always use the "data-src" attribute
+    </h3>
+
+    <p>
+        It is highly recommended to always use the "data-src" attribute instead of the "src" attribute. Use the "src" attribute only 
+        if you want to take advantage of the handling feature alone. If you plan on using lazy loading and/or retina features, 
+        <strong>do not</strong> use the "src" attribute at all because using it will simply override them. This is because most browsers 
+        will just fetch the images anyway. In fact, if you set [retina] to true and use both "src" and "data-src" attributes, this will 
+        cause loading of <strong>both</strong> versions of the images, which will result in insanely slow loading time.
+    </p>
+
+    <h3>
+        Google Chrome &lt;!DOCTYPE&gt; declaration issue
+    </h3>
+
+    <p>
+        Please use the &lt;!DOCTYPE html&gt; declaration and not just &lt;!DOCTYPE&gt;. Chrome has a bug where it returns a wrong 
+        value for the window height if you use the DOCTYPE declaration without 'html' inside it, which causes issues with lazy 
+        loading.
+    </p>
+</body>
 </html>

@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<!--[if lte IE 8]><html lang="en" class="ie8"><!--<![endif]-->
+<html lang="en">
+<head>
+    <title>Retina - jQuery imageHandler</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="author" content="Ramy Al Reedy">
+    <meta name="description" content="A lightweight plugin that handles your images with a handful of features">
+    <meta name="keywords" content="html,css,javascript,jquery,image,images,handler,handling,imagehandler">
+
+    <!--PAGE STYLES (YOU WON'T NEED THIS)-->
+    <link rel="stylesheet" href="css/page-styles.css" />
+
+    <!--STYLES RELATED TO THIS EXAMPLE-->
+    <style>
+
+        .image-list {
+            list-style-type: none;
+            margin-top: -4%;
+            margin-left: -4%;
+        }
+
+            .image-list li {
+                float: left;
+                width: 21%;
+                margin-top: 4%;
+                margin-left: 4%;
+            }
+
+        .handler {
+            width: 100%;
+            height: 200px;
+            border: 1px solid #777;
+            -webkit-transition: all ease 0.4s;
+            -moz-transition: all ease 0.4s;
+            -o-transition: all ease 0.4s;
+            transition: all ease 0.4s;
+        }
+
+            a .handler img:hover {
+                filter: alpha(opacity=80);
+            }
+
+            a .handler:hover {
+                opacity: 0.8;
+            }
+
+        @media screen and (max-width: 767px) {
+            .image-list li {
+                width: 46%;
+                margin-left: 4%;
+            }
+            .handler {
+                height: 260px;
+            }
+        }
+
+        @media screen and (max-width: 479px) {
+            .image-list,
+            .image-list li {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+
+    </style>
+
+    <!--[if lte IE 7]>
+    <style type="text/css">
+
+        .clearfix {
+            display: inline-block;
+        }
+
+        .image-list {
+            margin-top: -40px;
+            margin-left: -40px;
+            position: relative;
+            z-index: -1;
+        }
+
+    </style>
+    <![endif]-->
+
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery.imageHandler.min.js"></script>
+
+    <!--CUSTOM SCRIPTS (YOU WON'T NEED THIS)-->
+    <script src="js/custom-scripts.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            //INITIALIZING IMAGEHANDLER WITH RETINA
+            $('.retina').imageHandler({
+                mode: 'fill-top',
+                loader: 'images/loading.gif',
+                retina: true
+            });
+
+            //INITIALIZING IMAGEHANDLER WITHOUT RETINA
+            $('.no-retina').imageHandler({
+                mode: 'fill-top',
+                loader: 'images/loading.gif',
+                retina: false
+            });
+
+            //IE7 HOVER FIX
+            $('.image-list a').hover(function () {
+                $(this).find('img').css('filter', 'alpha(opacity=80)');
+            },
+            function () {
+                $(this).find('img').css('filter', '');
+            });
+
+        });
+
+    </script>
+
+</head>
+<body>
+    <div class="menu-wrapper">
+        <span></span>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="index.html">Overview & documentation</a>
+                </li>
+                <li>
+                    <a href="basic.html">Basic usage</a>
+                </li>
+                <li>
+                    <a href="lazy-loading.html">Lazy loading</a>
+                </li>
+                <li class="active">
+                    <a href="retina.html">Retina</a>
+                </li>
+                <li>
+                    <a href="multiple.html">Multiple instances</a>
+                </li>
+                <li>
+                    <a href="rtl.html">RTL</a>
+                </li>
+                <li>
+                    <a href="rehandle.html">reHandle</a>
+                </li>
+                <li>
+                    <a href="ajax.html">Ajax</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <h1>
+        <a href="index.html">
+            jQuery imageHandler
+        </a>
+    </h1>
+    <h2>
+        Retina example
+    </h2>
+    <h3>
+        You must be using a device with a retina or a high density display to see the difference.
+    </h3>
+    <ul class="image-list clearfix">
+        <li>
+            <a href="#">
+                <img class="handler retina" data-src="images/items/02.jpg" />
+            </a>
+            <h4>Retina</h4>
+        </li>
+        <li>
+            <a href="#">
+                <img class="handler no-retina" data-src="images/items/02.jpg" />
+            </a>
+            <h4>No retina</h4>
+        </li>
+        <li>
+            <a href="#">
+                <img class="handler retina" data-src="images/items/08.jpg" />
+            </a>
+            <h4>Retina</h4>
+        </li>
+        <li>
+            <a href="#">
+                <img class="handler no-retina" data-src="images/items/08.jpg" />
+            </a>
+            <h4>No retina</h4>
+        </li>
+        <li>
+            <a href="#">
+                <img class="handler retina" data-src="images/items/15.jpg" />
+            </a>
+            <h4>Retina</h4>
+        </li>
+        <li>
+            <a href="#">
+                <img class="handler no-retina" data-src="images/items/15.jpg" />
+            </a>
+            <h4>No retina</h4>
+        </li>
+        <li>
+            <a href="#">
+                <img class="handler retina" data-src="images/items/20.jpg" />
+            </a>
+            <h4>Retina</h4>
+        </li>
+        <li>
+            <a href="#">
+                <img class="handler no-retina" data-src="images/items/20.jpg" />
+            </a>
+            <h4>No retina</h4>
+        </li>
+    </ul>
+</body>
+</html>
