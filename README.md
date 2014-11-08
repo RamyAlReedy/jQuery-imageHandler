@@ -1,10 +1,6 @@
 jQuery-imageHandler
 ===================
 
-A jQuery plugin that handles the positioning and sizing of images
+A lightweight plugin that handles your images with a handful of features
 
-Test
-
-### Title
-
-Text <a href="#">anchor</a>
+<a href="#">Overview & Documentation</a>
