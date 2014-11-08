@@ -193,7 +193,7 @@
         $(document).ready(function () {
 
             //INITIALIZING IMAGEHANDLER & PUSHING FIRST INSTANCE INTO ARRAY 
-            handler.push($('img.handler').imageHandler({
+            handler.push($('.handler').imageHandler({
                 mode: 'fill-top',
                 loader: 'images/loading.gif',
                 lazy: true,
@@ -228,7 +228,7 @@
                     context: document.body,
                     success: function (data) {
                         $('.image-list').append(data);
-                        handler.push($('.handler').imageHandler({
+                        handler.push($('.handler').not('.handler-loading, .handler-loaded').imageHandler({
                             mode: 'fill-top',
                             loader: 'images/loading.gif',
                             lazy: true,
